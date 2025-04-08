@@ -1,0 +1,76 @@
+@font-face {
+	font-family: "Default";
+	src: url("../font/Vipnagorgialla.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+    background-image: url('../img/background.jpg');
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background image fixed */
+    text-align: center;
+    font-family: "Default", sans-serif;
+  }
+
+  @keyframes colorShift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+h1 {
+    color: red;
+    font-size: 300%;
+    animation: colorShift 2s linear infinite;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+}
+
+  .video {
+    display: flex;
+    flex-direction: row-reverse;
+    flex: auto;
+    align-items: center;
+    justify-content: start;
+  }
+
+  a {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(255, 208, 0);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    font-size: 100%;
+    margin-left: 1vw;
+  }
+
+  a:hover {
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    font-weight: bold;
+    font-size: 130%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .video-thumbnail {
+    height: 100px;
+    margin-left: 5vw;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    border: none;
+  }
+
+  .video-thumbnail:active {
+      position: fixed; /* Fix position so it stays centered */
+      top: 50%;
+      left: 45%;
+      transform: translate(-50%, -50%) scale(8); /* Center it and scale */
+      z-index: 1000; /* Ensure it's on top */
+      border:purple solid 5px;
+      box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+      transition: all 0.3s ease-in-out;
+  }
+
+  .video-published-at {
+    display: block;
+    margin-top: 5px; /* Adjust spacing as needed */
+  }
