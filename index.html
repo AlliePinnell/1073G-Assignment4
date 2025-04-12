@@ -1,33 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allie - Assignment 4</title>
-    
-    <!-- Linking external stylesheet -->
-    <link href="css/styles.css" rel="stylesheet" />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment 4 | COMP1073 Client-Side JavaScript</title>
+        <link href="css/styles.css" rel="stylesheet" /> <!-- Linking external stylesheet -->
+        <script src="js/script.js" defer></script> <!-- Linking external JavaScript file -->
+    </head>
+    <body>
+        <p id="myStudentId"></p>  <!-- Placeholder for Student ID -->
+        <img src="./img/logo.png" alt="Logo"> <!-- Logo image with alt text -->
 
-    <!-- Linking external JavaScript file -->
-    <script src="js/script.js" defer></script>
-</head>
-<body>
-
-    <!-- Logo image with alt text -->
-    <p id="myStudentId"></p> 
-    <img src="./img/logo.png" alt="Logo">
-
-    <!-- Main heading for video section -->
-    <h1 id="title"></h1>
-    
-    <!-- Section for videos, including video itself and video title with clickable link to video -->
-    <div id="vid"></div>
-
-    <!-- Student ID -->
-    <div> 
-        <button id="myStudentIdButton">Click to see Student ID</button>
+        <h1 id="title"></h1> <!-- Main heading for video section -->
         
-    </div>
+        <div id="vid"></div> <!-- Section for videos, including video itself and video title with clickable link to video -->
 
-</body>
+        <div> 
+            <button id="myStudentIdButton">Click to see Student ID</button> <!-- Button to reveal Student ID -->
+        </div>
+    </body>
 </html>

@@ -5,6 +5,7 @@ const myStudentIdButton = document.getElementById("myStudentIdButton");
 // Get reference to the video container div
 let videoContainer = document.getElementById('vid');
 
+// Get reference to the title element where the channel title will be displayed
 const title = document.getElementById("title");
 
 // API key for accessing YouTube Data API
@@ -13,11 +14,13 @@ const apiKey = 'AIzaSyDma9pRUYp_-wEwW3curtSuzOVoWC2xmfI';
 //https://youtu.be/K9G3Yc0pw9g - Help with inital setup
 //https://developers.google.com/youtube/v3/getting-started - API documentation & setup
 
+// Function to fetch and display videos from a YouTube playlist
 async function showVideos() {
     // Fetch video data from YouTube API using the provided playlist ID and API key
     const response = await fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=8&playlistId=UUmifxkTvlJdgwHXb2Uov6Pw&key=${apiKey}`);
     const data = await response.json(); // Convert response to JSON format
 
+    // Extract and display the channel title
     const channelTitle = data.items[0].snippet.channelTitle; // Extract channel title
     title.textContent = channelTitle + "'s Latest Videos"; // Set the title element to the channel title
 
@@ -45,15 +48,17 @@ async function showVideos() {
         videoplayer.src = `https://www.youtube.com/embed/${vidId}`; // Embed YouTube video
         videoplayer.allowFullscreen = true; // Allow fullscreen mode
 
+        // Create a paragraph element to display the publish date
         let videoPublishedAt = document.createElement("p");
         videoPublishedAt.classList.add("video-published-at");
         videoPublishedAt.textContent = "Published on: " + vidPublishedAt; // Display publish date
 
+        // Create an image element for the video thumbnail
         let videoThumbnail = document.createElement("img");
         videoThumbnail.classList.add("video-thumbnail");
         videoThumbnail.src = vidThumbnail; // Set thumbnail image source
         videoThumbnail.alt = "Video Thumbnail"; // Set alt text for thumbnail
-        videoThumbnail.title = "Click for Fullscreen view" // Set title attribute for thumbnail
+        videoThumbnail.title = "Click for Fullscreen view"; // Tells user they can click for fullscreen view of image
     
         // Create a container div for the link and published date
         let videoInfo = document.createElement("div");
@@ -79,5 +84,8 @@ function showID() {
 	myStudentId.textContent = "Allie Pinnell - 1268163";
 }
 
+// Call the showVideos function once the DOM content is fully loaded
 document.addEventListener("DOMContentLoaded", showVideos);
+
+// Add a click event listener to the button to display the student ID
 myStudentIdButton.addEventListener("click", showID);
